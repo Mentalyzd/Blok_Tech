@@ -1,1 +1,2 @@
-console.log("Hallo Wereld");
+console.log("Hallo Wereld"); 
+console.log("Davey Bedankt"); 
