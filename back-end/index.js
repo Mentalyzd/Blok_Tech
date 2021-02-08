@@ -6,7 +6,7 @@ var uren = 0;
 //timer
 setInterval(function() {
     honderdste++;
-    if (honderdste == 100){
+    if (honderdste == 100){ 
         seconden++;
         honderdste = 0;
     }else if (seconden == 60){
