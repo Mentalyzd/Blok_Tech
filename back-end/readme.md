@@ -11,3 +11,13 @@
   
 ### What tasks can you run with npm run scripts?
   Servers en js files.
+
+
+# Week 2
+
+### How does express combine the data from the server with the templating engine?
+
+
+
+### How do partials work? Can you create a folder structure for all the components?
+  
