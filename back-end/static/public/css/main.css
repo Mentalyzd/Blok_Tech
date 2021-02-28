@@ -1,21 +1,767 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 *{
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
 }
 
-header{
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    padding: 2em;
+    background: #232534;
+}
+
+#fitbudLogo{
+    object-fit: contain;
+    width: 5em;
+}
+
+main{
+    padding:0 0 3.5em 0;
+}
+
+main h1{
+    color: #fff;
+    margin-bottom: 3.5em;
+}
+
+main .zoekBalk{
+    position: fixed;
+    top: 11.5em;
+    left: 1em;
+    width: calc(100% - 2em);
+    z-index: 5;
+    transition: 0.3s ease;
+}
+
+.zoekBalkScroll{
+    top: 1em !important;
+}
+
+main .zoekBalk div{
+    width: 100%;
+    height: 4em;
+    display: flex;
+    flex-direction: row;
+    background: linear-gradient(
+135deg
+, #76e2ce, #3461ab);
+    padding: 0.5em;
+    border-radius: 1em;
+    box-shadow: 0 1px 1px rgb(0 0 0 / 20%), 0 2px 2px rgb(0 0 0 / 20%), 0 4px 4px rgb(0 0 0 / 20%), 0 8px 8px rgb(0 0 0 / 20%), 0 16px 16px rgb(0 0 0 / 20%);
+}
+
+main .zoekBalk div input{
+    width: 100%;
+    height: 100%;
+    border-radius: 1em 0 0 1em;
+    outline: inherit;
+    border: none;
+    padding-left: 1em;
+    background: #232534a1;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: #fff;
+}
+
+.zoekBalk ::placeholder {
+    color: #fff;
+    opacity: 1;
+  }
+
+main form div button{
+    width: 3em;
+    height: 100%;
+    border-radius: 0 0.5em 0.5em 0;
+    background: linear-gradient(-135deg, rgb(60, 62, 85) 0%, rgb(29, 30, 44) 100%);
+    color: #fff;
+    font-size: 1.3em;
+    border: none;
+    padding: 0;
+    outline: inherit;
+}
+
+main section{
+    position: relative;
+    background: #32344d;
+    background: linear-gradient(-135deg, rgb(60, 62, 85) 0%, rgb(29, 30, 44) 100%);
+    border-radius: 1em;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.2),
+              0 2px 2px rgba(0,0,0,0.2),
+              0 4px 4px rgba(0,0,0,0.2),
+              0 8px 8px rgba(0,0,0,0.2),
+              0 16px 16px rgba(0,0,0,0.2);
+    margin: 1.5em 0;
+    color:#fff;
+}
+
+main section > div:nth-of-type(1) {
+    position: absolute;
+    right: -1.1em;
+    bottom: 1.35em;
+    width: 1.33em;
+    height: 1em;
+    background: linear-gradient(-135deg,#53194b, #5a1c37 );
+    border-radius: 0 0.5em 0.5em 0;
+    clip-path: polygon(45% 0, 100% 0, 100% 100%, 0% 100%);
+    transform: rotate(-30deg);
+    transform-origin: bottom right;
+}
+
+main section > div:nth-of-type(2){
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4em 0;
+}
+
+main section > div:nth-of-type(2) p:nth-of-type(0){
+    margin-right: 0.25em;
+}
+
+main section > div:nth-of-type(2) img{
+    margin: 0 0 1em 0;
+    width: 8em;
+    height: 8em;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1), 
+              0 2px 2px rgba(0,0,0,0.1), 
+              0 4px 4px rgba(0,0,0,0.1), 
+              0 8px 8px rgba(0,0,0,0.1),
+              0 16px 16px rgba(0,0,0,0.1);
+
+    border: 0.15em solid #76d2e2;
+    padding: 0.5em;
+}
+
+
+main section > div:nth-of-type(2) h2{
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-align: center;
+    line-height: 1em;
+    margin-bottom: 0.15em;
+}
+
+main section > div:nth-of-type(2) p{
+    font-weight: 400;
+    letter-spacing: 0.05em;
+}
+
+main section > div:nth-of-type(2) p i{
+    margin-right: 0.25em;
+}
+
+main .rating{
+    margin: 0.5em 0 0 0;
+    background: -webkit-linear-gradient( 135deg, #76e2ce, #3461ab);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.02), 
+              0 2px 2px rgba(0,0,0,0.05), 
+              0 4px 4px rgba(0,0,0,0.05), 
+              0 8px 8px rgba(0,0,0,0.3),
+              0 16px 16px rgba(0,0,0,0.1);
+}
+
+main section > div:nth-of-type(2) a{
+    font-weight: 600;
+    font-size: 0.8em;
+    color: #fff;
+    letter-spacing: 0.05em;
+    padding: 1em 2em;
+    margin: 2em 0 0 0;
+    background: -webkit-linear-gradient(135deg, #76e2ce, #3461ab);
+    border-radius: 2em;
+    text-decoration: none;
+    box-shadow: 0 1px 1px #284b851a, 
+              0 2px 2px #284b851a, 
+              0 4px 4px #284b851a, 
+              0 8px 8px #284b851a,
+              0 16px 16px #284c8544;
+}
+
+main section > div:nth-of-type(3) {
+    position: absolute;
+    right: 1.5em;
+    top: 1.5em;
+    font-size: 1em;
+}
+
+main section > div:nth-of-type(3) .fa-heart {
+    margin-right: 0.5em;
+}
+
+main section > div:nth-of-type(4) {
+    position: absolute;
+    right: -1em;
+    bottom: 1.25em;
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.3));
+}
+
+main section > div:nth-of-type(4) > div:nth-of-type(1) {
+    font-size: 0.8em;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    width: fit-content;
+    padding: 0.5em 0.8em 0.5em 1.2em;
+    background: linear-gradient(-135deg,#db41c7, #db4185 );
+    border-radius: 0 0.5em 0.5em 0;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 5% 50%);
+    z-index: 100;
+}
+
+
+/*Footer nav*/
+footer{
+    position: fixed;
+    bottom:0;
+    left: 0;
+    padding: 1em;
     width: 100%;
 }
 
-header nav ul{
+nav{
+    background: linear-gradient(
+        -135deg
+        , rgb(60, 62, 85) 0%, rgb(29, 30, 44) 100%);
+    border-radius: 1em;
+    box-shadow: 0 1px 1px rgb(0 0 0 / 20%), 0 2px 2px rgb(0 0 0 / 20%), 0 4px 4px rgb(0 0 0 / 20%), 0 8px 8px rgb(0 0 0 / 20%), 0 16px 16px rgb(0 0 0 / 20%);
+    padding: 1.5em 2.5em;
+}
+
+ul{
+    list-style: none;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+}
+
+ul li {
+    transition: 0.3s;
+}
+
+ul li i{
+    color: #fff;
+    font-size: 1.5em;
+}
+
+nav ul li button{
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+.backToTop{
+    transform: rotate(90deg);
+    
+}
+
+/*Login pagina*/
+
+.loginWrap{
+    color: #fff;
+}
+
+.loginWrap h1{
+    margin-bottom: 0.5em;
+}
+
+.loginWrap input[type="text"], .loginWrap input[type="number"], .loginWrap input[type="email"], .loginWrap input[type="password"]{
+    width: 100%;
+    height: 3.25em;
+    padding: 0.5em 1em 1em 0;
+    outline: inherit;
+    border: none;
+    border-bottom: 2px solid #fff;
+    background: transparent;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: #fff;
+    margin-bottom: 2em;
+}
+
+.loginWrap input[type="submit"]{
+    font-weight: 600;
+    font-size: 0.8em;
+    border: none;
+    color: #fff;
+    letter-spacing: 0.05em;
+    padding: 1em 2em;
+    margin: 1em 0 0 0;
+    background: -webkit-linear-gradient(135deg, #76e2ce, #3461ab);
+    border-radius: 2em;
+    text-decoration: none;
+    box-shadow: 0 1px 1px rgb(0 0 0 / 20%), 0 2px 2px rgb(0 0 0 / 20%), 0 4px 4px rgb(0 0 0 / 20%), 0 8px 8px rgb(0 0 0 / 20%), 0 16px 16px rgb(0 0 0 / 20%);
+}
+
+.loginWrap ::placeholder {
+    color: #888;
+}
+
+.loginWrap form{
+    margin-bottom: 2em;
+}
+
+.loginWrap label{
+    text-transform: uppercase;
+    font-size: 0.8em;
+}
+
+.loginDrawWrap{
+    position: relative;
+    left: -1em;
+    background: linear-gradient( 135deg, #76e2ce, #3461ab);
+    padding: 1em;
+    margin: 1em 0 2.5em 0;
+    border-radius: 1em;
+    width: calc(100% + 2em);
+    box-shadow: 0 1px 1px rgb(0 0 0 / 20%), 0 2px 2px rgb(0 0 0 / 20%), 0 4px 4px rgb(0 0 0 / 20%), 0 8px 8px rgb(0 0 0 / 20%), 0 16px 16px rgb(0 0 0 / 20%);
+}
+
+.loginDraw{
+    height: 10em;
+    width: 100%;
+    background-image: url('../assets/loginDraw3.svg');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.loginWrap a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.loginWrap a span{
+    text-decoration: underline;
+    color: #ff40e5;
+}
+
+.loginWrap p{
+    margin-bottom: 1em;
+}
+
+/*Registeren pagina*/
+.registerWrap{
+    color: #fff;
+}
+
+.registerWrap h1{
+    margin-top: 0.25em;
+}
+
+.registerWrap p{
+    margin-bottom: 1em;
+}
+
+.registerWrap .errorMsg{
+    color: rgb(220, 20, 20);
+    margin: 0 !important;
+}
+
+.registerWrap .registerSteps{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 3em;
+    
+}
+
+.registerWrap .registerSteps span{
+    font-size: 0.6em;
+    color: #888;
+    text-align: center;
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.3));
+}
+
+.stepActive > div > div{
+    border: 0.15em solid #76d2e2 !important;
+}
+
+.stepActive > span{
+    color: #76d2e2 !important;
+}
+
+.registerWrap .registerSteps .registerStep1 {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
     justify-content: center;
 }
 
-header nav ul li{
-    list-style: none;
+.registerWrap .registerSteps .registerStep1 > div{
+    width: fit-content;
+    height: fit-content;
+    padding: 0.25em;
+    border-radius: 50%;
+    background: #232534;
+    z-index: 4;
+}
+
+.registerWrap .registerSteps .registerStep1 > div > div{
+    border: 0.15em solid #fff;
+}
+
+.registerWrap .registerSteps .registerStep1 > span{
+    color: #fff;
+}
+
+.registerWrap .registerSteps .registerStep2 {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+
+.registerWrap .registerSteps .registerStep2 > div{
+    width: fit-content;
+    height: fit-content;
+    padding: 0.25em;
+    border-radius: 50%;
+    background: #232534;
+    z-index: 4;
+}
+
+.registerWrap .registerSteps .registerStep3 {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+
+.registerWrap .registerSteps .registerStep3 > div{
+    width: fit-content;
+    height: fit-content;
+    padding: 0.25em;
+    border-radius: 50%;
+    background: #232534;
+    z-index: 4;
+}
+
+.registerWrap .registerSteps .registerStep4 {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+
+.registerWrap .registerSteps .registerStep4 > div{
+    width: fit-content;
+    height: fit-content;
+    padding: 0.25em;
+    border-radius: 50%;
+    background: #232534;
+    z-index: 4;
+}
+
+.registerWrap .registerSteps div > div > div{
+    width: fit-content;
+    height: fit-content;
+    padding: 0.5em;
+    border-radius: 50%;
+    border: 0.15em solid #888;
+    background: #232534;
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.3));
+    position: relative;
+    transition: 0.3s ease;
+}
+
+.progressBalk{
+    position: absolute;
+    width: 100%;
+    height: 0.15em;
+    background: #888;
+    top: calc(30% - 0.0525em);
+    z-index: 1;
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.3));
+}
+
+.progressBalk .innerProgressBalk{
+    width: 15%;
+    height: 100%;
+    background: #76d2e2 !important;
+    padding: 0 !important;
+    border-radius: 0.1em !important;
+    transition: 0.5s ease;
+}
+
+.registerWrap input[type="text"], .registerWrap input[type="number"], .registerWrap input[type="email"], .registerWrap input[type="password"]{
+    width: 100%;
+    height: 3.25em;
+    padding: 0.5em 1em 1em 0;
+    outline: inherit;
+    border: none;
+    border-bottom: 2px solid #fff;
+    background: transparent;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: #fff;
+    margin-bottom: 2em;
+}
+
+.registerWrap label{
+    text-transform: uppercase;
+    font-size: 0.8em;
+}
+
+.registerWrap button{
+    font-weight: 600;
+    font-size: 0.8em;
+    border: none;
+    color: #fff;
+    letter-spacing: 0.05em;
+    padding: 1em 2em;
+    background: -webkit-linear-gradient(135deg, #76e2ce, #3461ab);
+    border-radius: 2em;
+    text-decoration: none;
+    box-shadow: 0 1px 1px rgb(0 0 0 / 5%), 0 2px 2px rgb(0 0 0 / 5%), 0 4px 4px rgb(0 0 0 / 5%), 0 8px 8px rgb(0 0 0 / 5%), 0 16px 16px rgb(0 0 0 / 5%);
+}
+
+.registerWrap input[type="submit"]{
+    font-weight: 600;
+    font-size: 0.8em;
+    border: none;
+    color: #fff;
+    letter-spacing: 0.05em;
+    padding: 1em 2em;
+    background: -webkit-linear-gradient(135deg, #76e2ce, #3461ab);
+    border-radius: 2em;
+    text-decoration: none;
+    box-shadow: 0 1px 1px rgb(0 0 0 / 5%), 0 2px 2px rgb(0 0 0 / 5%), 0 4px 4px rgb(0 0 0 / 5%), 0 8px 8px rgb(0 0 0 / 5%), 0 16px 16px rgb(0 0 0 / 5%);
+}
+
+.registerWrap .bioWrap{
+    display: flex;
+    flex-direction: column;
+}
+
+.registerWrap .bioWrap textarea {
+    resize: vertical;
+    margin-bottom: 2em;
+    width: 100%;
+    padding: 0.5em 1em 1em 0;
+    outline: inherit;
+    border: none;
+    border-bottom: 2px solid #fff;
+    background: transparent;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: #fff;
+}
+
+.registerWrap input[type="file"]{
+    width: 100%;
+    height: 3.25em;
+    padding: 0.5em 1em 1em 0;
+    outline: inherit;
+    border: none;
+    border-bottom: 2px solid #fff;
+    background: transparent;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: #fff;
+    margin-bottom: 2em;
+}
+
+.registerWrap .btnControlFirst button{
+    margin-top: 2em;
+    margin-bottom: 3em;
+    outline:0;
+}
+
+.registerWrap .btnControl{
+    margin-top: 2em;
+    display: flex;
+    justify-content: space-between;
+}
+
+.registerWrap .btnControl button:focus {
+    outline:0;
+}
+
+
+
+.registerWrap a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.registerWrap a span{
+    text-decoration: underline;
+    color: #ff40e5;
+}
+
+
+.registerWrap ::placeholder {
+    color: #888;
+    opacity: 1;
+}
+
+.registerWrap form{  
+    overflow: hidden;
+    width: 100%;
+    margin-bottom: 2em;
+}
+
+.registerWrap form .registerCarousel{
+    width: 400%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    transition: 0.3s ease;
+    padding-bottom: 2em;
+}
+
+.registerWrap form .registerCarousel p{
+    margin-bottom: 2em;
+}
+
+.registerCarouselInfo{
+    //transform: translateX(-25%);
+}
+
+.registerCarouselInfo form > div{
+    transform: translateX(-25%);
+}
+
+.registerCarouselInfo .progressBalk .innerProgressBalk{
+    width: 40%;
+}
+
+
+
+.registerCarouselInfo .registerSteps .registerStep1 > div > div{
+    border: 0.15em solid #76d2e2 ;
+}
+
+.registerCarouselInfo .registerSteps .registerStep2 > div > div{
+    border: 0.15em solid #fff ;
+}
+
+.registerCarouselInfo .registerSteps .registerStep2 > span{
+    color: #fff;
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.3));
+}
+
+.registerCarouselInfo .registerSteps .registerStep1 > div > div::after{
+    position: absolute;
+    font-family: 'FontAwesome';
+    font-size: 1.2em;
+    content: '\f00c';
+    color: #fff;
+    text-decoration:none;
+    top: -0.35em;
+    left: -0.08em;
+    text-shadow: 4px 0 0 #232534, -4px 0 0 #232534, 0 4px 0 #232534, 0 -4px 0 #232534, 2px 2px #232534, -2px -2px 0 #232534, 2px -2px 0 #232534, -2px 2px 0 #232534;
+}
+
+
+
+.registerCarouselGym{
+    //transform: translateX(-50%);
+}
+
+.registerCarouselGym form > div{
+    transform: translateX(-50%);
+}
+
+.registerCarouselGym .progressBalk .innerProgressBalk{
+    width: 65%;
+}
+
+.registerCarouselGym .registerSteps .registerStep2 > div > div{
+    border: 0.15em solid #76d2e2 ;
+}
+
+.registerCarouselGym .registerSteps .registerStep3 > div > div{
+    border: 0.15em solid #fff ;
+}
+
+.registerCarouselGym .registerSteps .registerStep3 > span{
+    color: #fff;
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.3));
+}
+
+.registerCarouselGym .registerSteps .registerStep2 > div > div::after{
+    position: absolute;
+    font-family: 'FontAwesome';
+    font-size: 1.2em;
+    content: '\f00c';
+    color: #fff;
+    text-decoration:none;
+    top: -0.35em;
+    left: -0.08em;
+    text-shadow: 4px 0 0 #232534, -4px 0 0 #232534, 0 4px 0 #232534, 0 -4px 0 #232534, 2px 2px #232534, -2px -2px 0 #232534, 2px -2px 0 #232534, -2px 2px 0 #232534;
+}
+
+
+
+
+.registerCarouselBio{
+    //transform: translateX(-75%);
+}
+
+.registerCarouselBio form > div{
+    transform: translateX(-75%);
+}
+
+.registerCarouselBio .progressBalk .innerProgressBalk{
+    width: 85%;
+}
+
+.registerCarouselBio .registerSteps .registerStep3 > div > div{
+    border: 0.15em solid #76d2e2 ;
+}
+
+.registerCarouselBio .registerSteps .registerStep4 > div > div{
+    border: 0.15em solid #fff ;
+}
+
+.registerCarouselBio .registerSteps .registerStep4 > span{
+    color: #fff;
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.3));
+}
+
+.registerCarouselBio .registerSteps .registerStep3 > div > div::after{
+    position: absolute;
+    font-family: 'FontAwesome';
+    font-size: 1.2em;
+    content: '\f00c';
+    color: #fff;
+    text-decoration:none;
+    top: -0.35em;
+    left: -0.08em;
+    text-shadow: 4px 0 0 #232534, -4px 0 0 #232534, 0 4px 0 #232534, 0 -4px 0 #232534, 2px 2px #232534, -2px -2px 0 #232534, 2px -2px 0 #232534, -2px 2px 0 #232534;
+}
+
+
+
+.registerWrap form .registerCarousel > div{
+    width: 25%;
+    padding-right: 1em;
+}
+
+#stap1{
+    //transform: translateX(100%);
 }

@@ -1,0 +1,113 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Matching App</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <script src="https://kit.fontawesome.com/e2d78460e9.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <div class="registerWrap" id="registerWrap">
+      <img id="fitbudLogo" src="assets/fitbudLogo.svg">
+      <h1>Register now</h1>
+      <p>Start your FitBud experience here!</p>
+      <div class="registerSteps">
+        <div class="progressBalk">
+          <div class="innerProgressBalk"></div>
+        </div>
+        <div class="registerStep1">
+          <div>
+            <div></div>
+          </div>
+          <span>login</span>
+        </div>
+        <div class="registerStep2">
+          <div>
+            <div></div>
+          </div>
+          <span>Info</span>
+        </div>
+        <div class="registerStep3">
+          <div>
+            <div></div>
+          </div>
+          <span>Gym</span>
+        </div>
+        <div class="registerStep4">
+          <div>
+            <div></div>
+          </div>
+          <span>Bio</span>
+        </div>
+        
+      </div>
+
+      <form method="post" action="/registreer" enctype="multipart/form-data">
+        <div class="registerCarousel" id="registerCarousel">
+          <div id="stap1">
+            <h3>Login</h3>
+            <p>Create your login details.</p>
+            <label for="email">Email</label>
+            <input id="email" type="email" name="email" placeholder="John@Doe.com" required>
+            <label for="pwd">Password</label>
+            <input id="pwd" type="password" name="password" placeholder="*******" required>
+            <% if (typeof errorMsg === "undefined") {}else{%>
+              <p class="errorMsg"><%= errorMsg %></p>
+            <%}%>
+            <div class="btnControlFirst">
+              <button id="next1" type="button">Next</button>
+            </div>
+            <a href="/">Already have an account? <span>log in.</span></a>
+          </div>
+          <div id="stap2">
+            <h3>Info</h3>
+            <p>Tel some more about yourself.</p>
+            <label for="firstname">Firstname</label>
+            <input id="firstname" type="text" name="firstname" placeholder="John" required>
+            <label for="lastname">Lastname</label>
+            <input id="lastname" type="text" name="lastname" placeholder="Joe" required>
+            <label for="age">Age</label>
+            <input id="age" type="number" name="age" placeholder="18" required>
+            <div class="btnControl">
+              <button id="prev3" type="button">Back</button>
+              <button id="next2" type="button">Next</button>
+            </div>
+          </div>
+          <div id="stap3">
+            <h3>Gym</h3>
+            <p>In order to match you with others, we need your gym info.</p>
+            <label for="gymname">Gym name</label>
+            <input id="gymname" type="text" name="gymname" placeholder="Fit4Free" required>
+            <label for="gymplace">Gym place</label>
+            <input id="gymplace" type="text" name="gymplace" placeholder="Amsterdam" required>
+            <label for="gymerv">Gym expertise</label>
+            <input id="gymerv" type="number" name="gymerv" placeholder="In years" required>
+            <div class="btnControl">
+              <button id="prev2" type="button">Back</button>
+              <button id="next3" type="button">Next</button>
+            </div>
+          </div>
+          <div id="stap4">
+            <h3>Bio</h3>
+            <p>Add a profile picture and tell others what your looking for.</p>
+            <label for="profilePic">Profile picture</label>
+            <input id="profilePic" type="file" name="profilePic" accept="image/png, image/jpeg">
+            
+            <div class="bioWrap">
+              <label for="bio">Biografie</label>
+              <textarea name="bio" id="bio" placeholder="Describe when and what you do in the gym..." rows="4"></textarea>
+            </div>
+            <div class="btnControl">
+              <button id="prev1" type="button">Back</button>
+              <input type="submit" value="Register" >
+            </div>
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </body>
+  <script src="/js/register.js"></script>
+</html>

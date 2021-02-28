@@ -1,0 +1,53 @@
+<!doctype html>
+
+<html lang="en">
+  <head></head>
+    <meta charset="utf-8">
+    <title>Matching App</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <script src="https://kit.fontawesome.com/e2d78460e9.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <main>
+      <img id="fitbudLogo" src="assets/fitbudLogo.svg">
+      <h1>find your fitness buddies</h1>
+      <%- include('components/search.ejs'); %>
+        <% gebruikers.forEach((gebruikers, index) => { %>
+          <section>
+            <div></div>
+            <div>
+              <img src="<%= gebruikers.profilePic %>">
+              <h2><%= gebruikers.firstname + " " + gebruikers.lastname %></h2>
+              <p><i class="far fa-map-marker"></i> <%= gebruikers.gymname + ", " + gebruikers.gymplace %></p>
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+              <a href="">Kom in contact</a>
+            </div>
+            <div>
+              <i class="far fa-heart"></i>
+              <i class="fas fa-ellipsis-v"></i>
+            </div>
+            <div>
+              <div>
+                <%= gebruikers.gymerv + " jaar gym ervaring" %>
+              </div>
+            </div>
+            
+          </section>
+        <% }) %>
+    </main>
+    
+      
+    
+    
+    <%- include('components/footer.ejs'); %>
+
+  </body>
+  <script src="/js/dashboard.js"></script>
+</html>

@@ -5,11 +5,30 @@
     <meta charset="utf-8">
     <title>Matching App</title>
     <link rel="stylesheet" href="/css/main.css">
+    <script src="https://kit.fontawesome.com/e2d78460e9.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
-    <%- include('components/header.ejs'); %>
-    <h1>Home</h1>
-    <%- include('components/footer.ejs'); %>
+    <div class="loginWrap">
+      <img id="fitbudLogo" src="assets/fitbudLogo.svg">
+      <div class="loginDrawWrap">
+        <div class="loginDraw"></div>
+      </div>
+      <h1>Login</h1>
+      <% if (typeof errorMsg === "undefined") {}else{%>
+        <p><%= errorMsg %></p>
+      <%}%>
+      <form method="post" action="/">
+        <label for="email">Email</label>
+        <input type="email" name="email" placeholder="John@Doe.com" required>
+        <label for="pwd">Password</label>
+        <input type="password" name="password" placeholder="*******" required>
+        <input type="submit" value="Let's login">
+      </form>
+      <a href="/registreer">Don't have an account? <span>Register now.</span></a>
+
+    </div>
+    
 
   </body>
   <script src="/js/index.js"></script>
