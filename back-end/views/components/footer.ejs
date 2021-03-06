@@ -2,6 +2,9 @@
     <nav>
         <ul>
             <li>
+                <a href="/profile"><div style="background-image: url(<%= ingelogd[0].profilePic %>)"></div></a>
+            </li>
+            <li>
                 <form method="post" action="/logout">
                     <button type="submit" class="btn btn-success">
                         <i class="fas fa-sign-out-alt"></i>
@@ -9,10 +12,7 @@
                 </form>
             </li>
             <li>
-                <i class="fas fa-user"></i>
-            </li>
-            <li>
-                <i class="fas fa-heart"></i>
+                <a href="/favorites"><i class="fas fa-heart"></i></a>
             </li>
             <li id="goBack">
                 <i class="fas fa-arrow-left"></i>

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head></head>
+    <meta charset="utf-8">
+    <title>FitBud || Favorites</title>
+    <link rel="icon" href="/assets/fitbudLogoIcon.svg">
+    <link rel="stylesheet" href="/css/main.css">
+    <script src="https://kit.fontawesome.com/e2d78460e9.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <main>
+      <img id="fitbudLogo" src="assets/fitbudLogo.svg">
+      <h1>Your favorite fitness buddies</h1>
+      <% if (!favos[0]) { %>
+        <div class="favoEmptyState">
+          <img img src="assets/FitBudEmptyState.svg" alt="">
+          <h2>Looks kinda empty here!</h2>
+          <a href="/dashboard">Go add buddies</a>
+        </div>
+      <% }else{ %>
+        <%- include('components/search.ejs'); %>
+        <% gebruikers.forEach((gebruikers, index) => { %>
+          <% var isFavoTrue %>
+          <% favos.forEach((favos, index) => { %>
+            <% if(favos.toBuddie == gebruikers._id){ %>
+              <% isFavoTrue = "true" %>
+            <%} %>
+          <% }) %>
+          <% if(isFavoTrue == "true"){ %>
+            <section class="searchTrue">
+              <div></div>
+              <div>
+                <img src="<%= gebruikers.profilePic %>">
+                <h2><%= gebruikers.firstname + " " + gebruikers.lastname %></h2>
+                <p><i class="far fa-map-marker"></i> <%= gebruikers.gymname + ", " + gebruikers.gymplace %></p>
+                <div class="rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="far fa-star"></i>
+                  <i class="far fa-star"></i>
+                </div>
+                <a href="">Send message</a>
+              </div>
+              <div>
+                <div class="likeBuddie" data-like-from="<%= currentId %>" data-like-to="<%= gebruikers._id %>">
+                  <i class="fas fa-heart"></i>
+                </div>
+              </div>
+              <div>
+                <div>
+                  <%= gebruikers.gymerv + " years gym experience" %>
+                </div>
+              </div>
+            </section>
+          <% } %>
+        <% }) %>
+      <% } %>
+    </main>  
+    <%- include('components/footer.ejs', {ingelogd: ingelogd}); %>
+  </body>
+  <script src="/js/dashboard.js"></script>
+</html>

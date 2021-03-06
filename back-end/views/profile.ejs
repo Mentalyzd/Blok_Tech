@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head></head>
+    <meta charset="utf-8">
+    <title>FitBud || Profile</title>
+    <link rel="icon" href="/assets/fitbudLogoIcon.svg">
+    <link rel="stylesheet" href="/css/main.css">
+    <script src="https://kit.fontawesome.com/e2d78460e9.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <main class="profilePage">
+      <img id="fitbudLogo" src="assets/fitbudLogo.svg">
+      
+      <div class="profileWrap">
+        
+        <h1>Profile</h1>
+        <div class="profileHead">
+          <div>
+            <img src="<%= ingelogd[0].profilePic %>" alt="">
+            	<div>
+              <h3><%= ingelogd[0].firstname + " " + ingelogd[0].lastname %></h3>
+              <p><%= ingelogd[0].gymname + ", " + ingelogd[0].gymplace %></p>
+            </div>
+          </div>
+          <p><%= ingelogd[0].bio %></p>
+          <div>
+            <p><%= ingelogd[0].age %> years old</p>
+            <p><%= ingelogd[0].gymerv %> years experience</p>
+          </div>
+        </div>
+        <div class="nameWrap">
+          <label for="Peronal Info">Peronal Info</label>
+          <h4><%= ingelogd[0].firstname + " " + ingelogd[0].lastname + ", " + ingelogd[0].age + " Years" %></h4>
+          <div class="editIcon"><i class="fas fa-pen"></i>Edit</div>
+        </div>
+
+        <div class="nameWrap">
+          <label for="Gym Info">Gym Info</label>
+          <h4><%= ingelogd[0].gymname + ", " + ingelogd[0].gymplace %></h4>
+          <h4><%= ingelogd[0].gymerv + " Years Experience" %></h4>
+          <div class="editIcon"><i class="fas fa-pen"></i>Edit</div>
+        </div>
+
+        <div class="nameWrap">
+          <label for="Bio">Bio</label>
+          <h4><%= ingelogd[0].bio %></h4>
+          <div class="editIcon"><i class="fas fa-pen"></i>Edit</div>
+        </div>
+
+      </div>
+    </main>
+    <%- include('components/footer.ejs', {ingelogd: ingelogd}); %>
+  </body>
+  <script src="/js/dashboard.js"></script>
+</html>

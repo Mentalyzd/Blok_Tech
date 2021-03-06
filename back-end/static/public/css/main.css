@@ -8,6 +8,18 @@
     box-sizing: border-box;
 }
 
+input {
+    border-radius: 0;
+}
+  
+input[type="search"] {
+    -webkit-appearance: none;
+}
+
+textarea{
+    border-radius: 0;
+}
+
 html{
     scroll-behavior: smooth;
 }
@@ -194,13 +206,13 @@ main section > div:nth-of-type(2) a{
 
 main section > div:nth-of-type(3) {
     position: absolute;
-    right: 1.5em;
-    top: 1.5em;
-    font-size: 1em;
+    right: 0.7em;
+    top: 0.5em;
+    font-size: 2.5em;
 }
 
-main section > div:nth-of-type(3) .fa-heart {
-    margin-right: 0.5em;
+main .likeBuddie{
+    height: 1em;
 }
 
 main section > div:nth-of-type(4) {
@@ -222,6 +234,251 @@ main section > div:nth-of-type(4) > div:nth-of-type(1) {
     z-index: 100;
 }
 
+.heartAnimFull{
+    animation: 0.5s ease heartAnimFull forwards;
+}
+
+@keyframes heartAnimFull{
+    0% {
+        transform: scale(1);
+    }
+    25%{
+        transform: scale(1.2);
+        filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.3));
+        
+    }
+    50%{
+        transform: scale(1);
+        color: #db4185;
+    }
+    75%{
+        transform: scale(1.3);
+        filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.3));
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+
+.heartAnimEmpty{
+    animation: 0.6s ease heartAnimEmpty forwards;
+}
+
+@keyframes heartAnimEmpty{
+    10%, 90% {
+        transform: translate3d(0px, 0, 0);
+    }
+      
+    20%, 80% {
+        transform: translate3d(1px, 0, 0);
+        color: #888;
+    }
+    
+    30%, 50%, 70% {
+        transform: translate3d(-2px, 0, 0);
+    }
+    
+    40%, 60% {
+        transform: translate3d(2px, 0, 0);
+    }
+}
+
+main .favoEmptyState{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+main .favoEmptyState img{
+    position: absolute;
+    width: 80%;
+    top: -5em;
+}
+
+main .favoEmptyState h2{
+    color: #fff;
+    text-align: center;
+    margin-top: 10em;
+    z-index: 4;
+}
+
+main .favoEmptyState a{
+    width: fit-content;
+    font-weight: 600;
+    font-size: 0.8em;
+    border: none;
+    color: #fff;
+    letter-spacing: 0.05em;
+    padding: 1em 2em;
+    margin: 1em 0 4em 0;
+    background: -webkit-linear-gradient(
+135deg
+, #76e2ce, #3461ab);
+    border-radius: 2em;
+    text-decoration: none;
+    box-shadow: 0 1px 1px rgb(0 0 0 / 20%), 0 2px 2px rgb(0 0 0 / 20%), 0 4px 4px rgb(0 0 0 / 20%), 0 8px 8px rgb(0 0 0 / 20%), 0 16px 16px rgb(0 0 0 / 20%);
+    z-index: 4;
+}
+
+/*Profile Pagina*/
+
+.profilePage h1{
+    margin: 0 0 0.5em 0;
+    
+}
+
+.profilePage .profileWrap{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+}
+
+.profilePage .profileWrap img{
+    margin: 0 1em 0 0;
+    width: 4em;
+    height: 4em;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 1px 1px rgb(0 0 0 / 10%), 0 2px 2px rgb(0 0 0 / 10%), 0 4px 4px rgb(0 0 0 / 10%), 0 8px 8px rgb(0 0 0 / 10%), 0 16px 16px rgb(0 0 0 / 10%);
+    border: 0.15em solid #76d2e2;
+    padding: 0.25em;
+}
+
+.profilePage form{
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    margin-bottom: 4em;
+}
+
+.profilePage textarea {
+    resize: vertical;
+    margin-bottom: 2em;
+    width: 100%;
+    padding: 0.5em 1em 1em 0;
+    outline: inherit;
+    border: none;
+    border-bottom: 2px solid #fff;
+    background: transparent;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: #fff;
+    white-space: pre-line
+}
+
+.profilePage input[type="text"], .profilePage input[type="number"], .profilePage input[type="email"], .profilePage input[type="password"] {
+    width: 100%;
+    height: 2em;
+    outline: inherit;
+    border: none;
+    border-bottom: 2px solid #fff;
+    background: transparent;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin-bottom: 2em;
+    color: #fff;
+}
+
+.profilePage input[type="file"] {
+    width: 100%;
+    height: 2.75em;
+    padding: 0.5em 1em 1em 0;
+    outline: inherit;
+    border: none;
+    border-bottom: 2px solid #fff;
+    background: transparent;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: #fff;
+    margin-bottom: 2em;
+}
+
+.profilePage input[type="submit"] {
+    font-weight: 600;
+    font-size: 0.8em;
+    border: none;
+    color: #fff;
+    letter-spacing: 0.05em;
+    padding: 1em 2em;
+    background: -webkit-linear-gradient(135deg, #76e2ce, #3461ab);
+    border-radius: 2em;
+    text-decoration: none;
+    box-shadow: 0 1px 1px rgb(0 0 0 / 5%), 0 2px 2px rgb(0 0 0 / 5%), 0 4px 4px rgb(0 0 0 / 5%), 0 8px 8px rgb(0 0 0 / 5%), 0 16px 16px rgb(0 0 0 / 5%);
+}
+
+.profilePage p {
+    font-size: 0.8em;
+}
+
+.profilePage label {
+    text-transform: uppercase;
+    font-size: 0.8em;
+}
+
+.profilePage .profileHead{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1em;
+    background: linear-gradient(-135deg, rgb(60, 62, 85) 0%, rgb(29, 30, 44) 100%);
+    box-shadow: 0 1px 1px rgb(0 0 0 / 20%), 0 2px 2px rgb(0 0 0 / 20%), 0 4px 4px rgb(0 0 0 / 20%), 0 8px 8px rgb(0 0 0 / 20%), 0 16px 16px rgb(0 0 0 / 20%);
+    padding: 1em;
+    border-radius: 1em;
+}
+
+.profilePage .profileHead > div:nth-of-type(1){
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.profilePage .profileHead > div:nth-of-type(2){
+    display: flex;
+    margin-top: 1em;
+    font-weight: 600;
+}
+
+.profilePage .profileHead > div:nth-of-type(2) > p{
+    background: linear-gradient( -135deg,#db41c7, #db4185 );
+    padding: 0.5em 1em;
+    border-radius: 0.5em;
+    margin-right: 0.5em;
+}
+
+.profilePage .profileHead > p{
+    font-weight: 700;
+}
+
+.profilePage .editIcon{
+    position: absolute;
+    right: 1em;
+    top: 1em;
+    font-size: 0.8em;
+    //border-bottom: 0.15em solid #fff;
+}
+
+.profilePage .editIcon i{
+    margin-right: 0.5em;
+    font-size: 0.75em;
+}
+
+.profilePage .nameWrap{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1em;
+    background: linear-gradient(-135deg, rgb(60, 62, 85) 0%, rgb(29, 30, 44) 100%);
+    box-shadow: 0 1px 1px rgb(0 0 0 / 20%), 0 2px 2px rgb(0 0 0 / 20%), 0 4px 4px rgb(0 0 0 / 20%), 0 8px 8px rgb(0 0 0 / 20%), 0 16px 16px rgb(0 0 0 / 20%);
+    padding: 1em;
+    border-radius: 1em;
+}
 
 /*Footer nav*/
 footer{
@@ -230,6 +487,7 @@ footer{
     left: 0;
     padding: 1em;
     width: 100%;
+    z-index: 100;
 }
 
 nav{
@@ -246,6 +504,7 @@ ul{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
 }
 
 ul li {
@@ -271,6 +530,17 @@ nav ul li button{
     transform: rotate(90deg);
     
 }
+
+
+ul li a div{
+    width: 1.5em;
+    height: 1.5em;
+    background-position: center;
+    background-size: cover;
+    border-radius: 50%;
+    border: 0.15em solid #ffffff;
+}
+
 
 /*Login pagina*/
 
@@ -538,6 +808,10 @@ nav ul li button{
     box-shadow: 0 1px 1px rgb(0 0 0 / 5%), 0 2px 2px rgb(0 0 0 / 5%), 0 4px 4px rgb(0 0 0 / 5%), 0 8px 8px rgb(0 0 0 / 5%), 0 16px 16px rgb(0 0 0 / 5%);
 }
 
+.registerWrap .prevBtn{
+    background: -webkit-linear-gradient(135deg, #495087, #232534);
+}
+
 .registerWrap input[type="submit"]{
     font-weight: 600;
     font-size: 0.8em;
@@ -714,9 +988,6 @@ nav ul li button{
     left: -0.08em;
     text-shadow: 4px 0 0 #232534, -4px 0 0 #232534, 0 4px 0 #232534, 0 -4px 0 #232534, 2px 2px #232534, -2px -2px 0 #232534, 2px -2px 0 #232534, -2px 2px 0 #232534;
 }
-
-
-
 
 .registerCarouselBio{
     //transform: translateX(-75%);

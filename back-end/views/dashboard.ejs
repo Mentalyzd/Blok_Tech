@@ -1,9 +1,9 @@
 <!doctype html>
-
 <html lang="en">
   <head></head>
     <meta charset="utf-8">
-    <title>Matching App</title>
+    <title>FitBud || Dashboard</title>
+    <link rel="icon" href="/assets/fitbudLogoIcon.svg">
     <link rel="stylesheet" href="/css/main.css">
     <script src="https://kit.fontawesome.com/e2d78460e9.js" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,7 +14,8 @@
       <h1>find your fitness buddies</h1>
       <%- include('components/search.ejs'); %>
         <% gebruikers.forEach((gebruikers, index) => { %>
-          <section>
+          <% var isFavoTrue %>
+          <section class="searchTrue">
             <div></div>
             <div>
               <img src="<%= gebruikers.profilePic %>">
@@ -27,27 +28,31 @@
                 <i class="far fa-star"></i>
                 <i class="far fa-star"></i>
               </div>
-              <a href="">Kom in contact</a>
+              <a href="">Send message</a>
             </div>
             <div>
-              <i class="far fa-heart"></i>
-              <i class="fas fa-ellipsis-v"></i>
+              <div class="likeBuddie" data-like-from="<%= currentId %>" data-like-to="<%= gebruikers._id %>">
+                  <% favos.forEach((favos, index) => { %>
+                  <% if(favos.toBuddie == gebruikers._id){ %>
+                    <% isFavoTrue = "true" %>
+                  <%} %>
+                <% }) %>
+                <% if(isFavoTrue == "true"){ %>
+                  <i class="fas fa-heart"></i>
+                  <% }else{ %>
+                    <i class="far fa-heart"></i>
+                    <% } %>
+              </div>
             </div>
             <div>
               <div>
-                <%= gebruikers.gymerv + " jaar gym ervaring" %>
+                <%= gebruikers.gymerv + " years gym experience" %>
               </div>
             </div>
-            
           </section>
         <% }) %>
     </main>
-    
-      
-    
-    
-    <%- include('components/footer.ejs'); %>
-
+    <%- include('components/footer.ejs', {ingelogd: ingelogd}); %>
   </body>
   <script src="/js/dashboard.js"></script>
 </html>

@@ -3,7 +3,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Matching App</title>
+    <title>FitBud || Register</title>
+    <link rel="icon" href="/assets/fitbudLogoIcon.svg">
     <link rel="stylesheet" href="/css/main.css">
     <script src="https://kit.fontawesome.com/e2d78460e9.js" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -41,10 +42,8 @@
           </div>
           <span>Bio</span>
         </div>
-        
       </div>
-
-      <form method="post" action="/registreer" enctype="multipart/form-data">
+      <form method="post" autocomplete="off" action="/registreer" enctype="multipart/form-data">
         <div class="registerCarousel" id="registerCarousel">
           <div id="stap1">
             <h3>Login</h3>
@@ -63,7 +62,7 @@
           </div>
           <div id="stap2">
             <h3>Info</h3>
-            <p>Tel some more about yourself.</p>
+            <p>Tell some more about yourself.</p>
             <label for="firstname">Firstname</label>
             <input id="firstname" type="text" name="firstname" placeholder="John" required>
             <label for="lastname">Lastname</label>
@@ -71,7 +70,7 @@
             <label for="age">Age</label>
             <input id="age" type="number" name="age" placeholder="18" required>
             <div class="btnControl">
-              <button id="prev3" type="button">Back</button>
+              <button class="prevBtn" id="prev3" type="button">Back</button>
               <button id="next2" type="button">Next</button>
             </div>
           </div>
@@ -85,13 +84,13 @@
             <label for="gymerv">Gym expertise</label>
             <input id="gymerv" type="number" name="gymerv" placeholder="In years" required>
             <div class="btnControl">
-              <button id="prev2" type="button">Back</button>
+              <button class="prevBtn" id="prev2" type="button">Back</button>
               <button id="next3" type="button">Next</button>
             </div>
           </div>
           <div id="stap4">
             <h3>Bio</h3>
-            <p>Add a profile picture and tell others what your looking for.</p>
+            <p>Add a profile picture and tell others what you're looking for.</p>
             <label for="profilePic">Profile picture</label>
             <input id="profilePic" type="file" name="profilePic" accept="image/png, image/jpeg">
             
@@ -100,12 +99,11 @@
               <textarea name="bio" id="bio" placeholder="Describe when and what you do in the gym..." rows="4"></textarea>
             </div>
             <div class="btnControl">
-              <button id="prev1" type="button">Back</button>
+              <button class="prevBtn"  id="prev1" type="button">Back</button>
               <input type="submit" value="Register" >
             </div>
           </div>
         </div>
-
       </form>
     </div>
   </body>
