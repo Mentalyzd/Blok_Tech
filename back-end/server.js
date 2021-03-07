@@ -133,7 +133,7 @@ app.post('/', async (req, res) => {
             //Check de gehashde wachtwoorden
             await bcrypt.compare(passwordPost, obj.pwd, (err, result) => {
                 if (result) {
-                  //Gebruiker is ingelogd
+                  //Gebruiker is ingelogd, add cookie
                   req.session.userId = obj._id
                   return res.redirect('/dashboard')
                 } else {
